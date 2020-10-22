@@ -1,0 +1,14 @@
+div{
+  border: 20px;
+  margin: 20px;
+  border-width: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+img{
+  display: flexbox;
+  align-content: center;
+  justify-content: center;
+}
+
