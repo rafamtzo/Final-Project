@@ -12,3 +12,20 @@ exports.register = async (req, res) => {
 
     //TODO: redirect to homepage
 };
+
+exports.login = async (req, res) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    const validPassword = await bcrypt.compare(password, user.password);
+
+    if(validPassword) {
+        console.log("Worked");   
+    } else {
+        console.log("Try Again");   
+    }
+
+    //TODO: redirect to homepage
+}
+
+//TODO: stay signed-in
+//TODO: logout
