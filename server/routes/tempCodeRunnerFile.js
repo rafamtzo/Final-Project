@@ -1,0 +1,1 @@
+outer.get('/:userId', controller.services_from_user);
