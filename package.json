@@ -1,0 +1,28 @@
+{
+  "name": "Final-Project",
+  "version": "1.0.0",
+  "description": "Proyecto Final de la materia de Desarrollo Web",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.10.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafamtzo/Final-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafamtzo/Final-Project/issues"
+  },
+  "homepage": "https://github.com/rafamtzo/Final-Project#readme"
+}

@@ -9,8 +9,8 @@ const serviceRotutes = require('./routes/service');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/auth", authRoutes);
-app.use("/service", serviceRotutes);
+app.use("/api", authRoutes);
+app.use("/api/services", serviceRotutes);
 
 
 app.listen(PORT, function() {
