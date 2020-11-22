@@ -4,6 +4,7 @@
   "description": "Proyecto Final de la materia de Desarrollo Web",
   "main": "index.js",
   "dependencies": {
+    "ajax": "0.0.4",
     "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
