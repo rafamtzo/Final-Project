@@ -7,39 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
     <ul class="nav">
       <li class="nav-item">
-          <a class="nav-link active" href="index.html">Home</a>
+          <a class="nav-link active" href="index.html"><h3>Home</h3></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="servicios.html">Servicios</a>
+          <a class="nav-link" href="servicios.html"><h3>Servicios</h3></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="crear.html">Crear</a>
+          <a class="nav-link" href="crear.html"><h3>Crear</h3></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="ingresa.html">Ingresa</a>
+          <a class="nav-link" href="ingresa.html"><h3 style=color:grey>Ingresa</h3></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="faq.html">Quienes Somos?</a>
+          <a class="nav-link" href="faq.html"><h3>Quienes Somos?</h3></a>
       </li>
   </ul>
 
-  <form>
-    <div class="w-50 p-3 form-group">
-        <label for="correo">Correo</label>
-        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  <form class="form-signin">
+    <div class = "ContenidoFormasIng">
+       <h1 class="h3 mb-3 font-weight-normal">Porfavor Ingresa</h1>
+      <div class="IngForm">
+        <label for="correo" class="sr-only">Email address</label>
+        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Email address">
+      </div>
+      <div class="IngForm">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+      <label>
+        <input type="checkbox" value="remember-me"> Recuerdame
+      </label>
+      <button id= "registrar" type="submit" class="btn btn-lg btn-primary btn-block">Ingresar</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
     </div>
-    <div class="w-50 p-3 form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="password" placeholder="Password">
-    </div>
-    <button id= "registrar" type="submit" class="btn btn-primary">Crear</button>
-</form>
+  </form>
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

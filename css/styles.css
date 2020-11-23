@@ -5,6 +5,37 @@ div {
     text-align: center;
     font-size: 20px;
 }
+h3{
+	color: white;
+}
+
+.ContenidoFormasIng{
+	width: 500px;
+	display: flexbox;
+    align-content: center;
+    justify-content: center;
+}
+.ContenidoFormasCrea{
+	width: 800px;
+	display: flexbox;
+    align-content: center;
+    justify-content: center;
+}
+.nav {
+	border: solid;
+	border-color: black;
+	background-color: black; 
+	display: flexbox;
+    align-content: center;
+    justify-content: center;
+}
+.nav-item{
+	border: solid;
+	border-color: black;
+	background-color: black; 
+	padding-right: 10px;
+	padding-left: 10px;
+}
 
 img {
     display: flexbox;
@@ -14,4 +45,5 @@ img {
 
 form {
     width: 30px;
+    
 }
