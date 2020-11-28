@@ -35,6 +35,8 @@ exports.login = async (req, res) => {
 exports.get_login = async (req, res) => {
     res.sendFile(path.resolve('./ingresa.html'));;
 }
-
-//TODO: stay signed-in
-//TODO: logout
+ 
+exports.logout = async (req, res) => {
+   res.cookie("token", '', {maxAge: 1});
+   res.redirect('/');
+}
