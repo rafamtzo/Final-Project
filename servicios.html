@@ -38,7 +38,7 @@
     </nav>
 
     
-    <ul id= "servicesList" class="services-group"></ul>
+    <ul  id= "servicesList" class="list-group"></ul>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -61,11 +61,11 @@
         var listItem = $(`<div class="card-body">`);
     
         listItem.append(
-          $(`<img src="https://www.capitalmexico.com.mx/wp-content/uploads/2020/10/EbuBlaYyvMhQsICKlxABndZObnndgaXLplbSdGfLTOVodYnmajykIhpktjOAiCSK.jpeg" class="card-img-top" alt="...">`),
           $(`<h5 class="card-title">`).text(`${data[i].name}`),
           $(`<p class="card-text">`).text(`${data[i].description}`),
+          $(`<a href="#" class="btn btn-primary">`).text(`Más información`)
        );
-       
+       card.append($(`<img src="https://www.capitalmexico.com.mx/wp-content/uploads/2020/10/EbuBlaYyvMhQsICKlxABndZObnndgaXLplbSdGfLTOVodYnmajykIhpktjOAiCSK.jpeg" class="card-img-top" alt="...">`));
        card.append(listItem);
        list.append(card);
       }
