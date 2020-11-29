@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
+
+<div class="shadow-lg p-0 mb-8">
     <ul class="nav">
         <li class="nav-item">
             <a class="nav-link active" href="/home"> <h3 style=color:grey> Home </h3></a>
@@ -30,15 +32,16 @@
             <a class="nav-link" href="/faq"><h3>Quienes Somos?</h3></a>
         </li>
     </ul>
+</div>
 
-    <form>
+    <form class = "form-wrapper">
     	<div class= "ContenidoFormasCrea">
-	        <div class="w-50 p-3 form-group">
+	        <div class="p-3 form-group">
 	            <label for="exampleInputEmail1">Nombre Servicio</label>
 	            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 	            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 	        </div>
-	        <div class="w-50 p-3 form-group">
+	        <div class="p-3 form-group">
 	            <label for="exampleFormControlTextarea1">Descripcion de Servicio</label>
 	            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 	        </div>
@@ -51,6 +54,25 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <div class = "foot">
+<div class="shadow-lg p-0 mb-8">
+  <footer class="page-footer font-small unique-color-dark pt-4">
+  <div class="container">
+    <ul class="list-unstyled list-inline text-center py-2">
+      <li class="list-inline-item">
+        <h5 class="mb-1" style=color:white>Solicita y Trabaja facilmente </h5>
+      </li>
+      <li class="list-inline-item">
+        <a href="#!" class="btn btn-primary" style=color:white>Ingresar Sesión</a>
+      </li>
+    </ul>
+  </div>
+  <div class="footer-copyright text-center py-3" style=color:white>© 2020 Copyright:
+    <a class = "btn btn-link" href="/home" > SuperServicios.com</a>
+  </div>
+  </footer>
 </body>
+
 
 </html>
