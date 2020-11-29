@@ -25,7 +25,6 @@ exports.login = async (req, res) => {
         const validPassword = await user.validatePassword(password);
         if(validPassword) {
             console.log("Password is valid");   
-            //crear token y redireccionar
             const token = jwt.sign({id:user._id}, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRES_IN});
             console.log(token);
             res.cookie("token", token, {httpOnly:true});
