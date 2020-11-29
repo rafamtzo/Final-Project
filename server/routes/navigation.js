@@ -24,6 +24,12 @@ router.get('/nuevo',verifyToken,(req, res) => {
     res.sendFile(path.resolve('./crear.html'));
 });
 
+router.get('/currentUser',verifyToken,(req, res) => {
+    console.log(req.userId);
+    res.json(req.userId);
+});
+
+
 router.get('/faq',(req, res) => {
     res.sendFile(path.resolve('./faq.html'));
 });

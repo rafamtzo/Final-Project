@@ -45,13 +45,13 @@
 	            <label for="exampleFormControlTextarea1">Descripcion de Servicio</label>
 	            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 	        </div>
-        	<button type="submit" class="btn btn-primary">Crear</button>
+        	<button id= "crear" type="submit" class="btn btn-primary">Crear</button>
         </div>
     </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src=https://code.jquery.com/jquery-3.5.1.min.js></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -73,6 +73,40 @@
   </div>
   </footer>
 </body>
+
+<script type="text/javascript">
+  $("#crear").on("click", function(e){
+    e.preventDefault();
+    var newService = {
+      name: $("#exampleInputEmail1").val(),
+      description: $("#exampleFormControlTextarea1").val(),
+      price: 0
+    };
+    console.log(newService);
+
+    $.ajax({url: "/currentUser", method: "GET"}).then(function(data){
+      console.log(`Usuario actual: ${data}`);
+
+      $.post(`/api/services/${data}`, newService, function(response){
+        if(response){
+          console.log("Post Successful");
+        } else {
+          console.log("We couldn't post");
+        }
+      })
+    }); 
+    
+    resetTextFields();
+  })
+
+  function resetTextFields(){
+    $("#exampleInputEmail1").val("");
+    $("#exampleFormControlTextarea1").val("")
+  }
+  
+ 
+  
+  </script>
 
 
 </html>
