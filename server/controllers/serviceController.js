@@ -7,14 +7,14 @@ const { ObjectID } = require('bson');
 exports.create_service = async (req, res) => {
      const { userId } = req.params;
      const {price, name, description} = req.body; 
-     const user = await User.findOne({email: userId});
+     const user = await User.findOne({_id: userId});
      const service = new Service({price, name, description, user});
      service.save();
 };
 
 exports.get_services_from_user = async (req, res) => {
     const { userId } = req.params;
-    const userObjectId = await User.findOne({email: userId});
+    const userObjectId = await User.findOne({_id: userId});
     const userServices = await Service.find({user: userObjectId});
     res.send(userServices);
 };
