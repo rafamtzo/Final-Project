@@ -35,6 +35,10 @@ exports.login = async (req, res) => {
 exports.get_login = async (req, res) => {
     res.sendFile(path.resolve('./ingresa.html'));;
 }
+
+exports.get_register = async (req, res) => {
+    res.sendFile(path.resolve('./registra.html'));;
+}
  
 exports.logout = async (req, res) => {
    res.cookie("token", '', {maxAge: 1});
