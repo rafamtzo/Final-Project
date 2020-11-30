@@ -20,6 +20,10 @@ router.get('/servicios',verifyToken,(req, res) => {
     res.sendFile(path.resolve('./servicios.html'));
 });
 
+router.get('/servicios/usuario',verifyToken,(req, res) => {
+    res.sendFile(path.resolve('./misServicios.html'));
+});
+
 router.get('/nuevo',verifyToken,(req, res) => {
     res.sendFile(path.resolve('./crear.html'));
 });
