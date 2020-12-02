@@ -10,6 +10,7 @@ exports.create_service = async (req, res) => {
      const user = await User.findOne({_id: userId});
      const service = new Service({price, name, description, user});
      service.save();
+     res.redirect('../../servicios/usuario');
 };
 
 exports.get_services_from_user = async (req, res) => {
@@ -26,19 +27,19 @@ exports.get_all_services = async (req, res) => {
 
 exports.get_service = async (req, res) => {
     const { serviceId } = req.params;
-    console.log(`Aui en back: ${serviceId}`);
     const service = await Service.findOne({_id: serviceId});
-    console.log(service);
     res.send(service);
 }; 
 
 exports.delete_service = async (req, res) => {
     const { serviceId } = req.params;
-    const operation = await Service.deleteOne({ _id: ObjectID(serviceId)}, function(err, doc){
-        if (err) return res.send(500, {error: err});
-        return res.send('Succesfully deleted.');
+    await Service.deleteOne({ _id: ObjectID(serviceId)}, function(err, doc){
+        if (err) {
+            res.json(false);
+        } else {
+            res.json(true);
+        }
     });
-    res.send(operation);
 };
 
 exports.edit_service = async (req, res) => {

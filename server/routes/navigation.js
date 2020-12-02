@@ -35,6 +35,11 @@ router.get('/nuevo',verifyToken,(req, res) => {
     res.render("crear");
 });
 
+router.get('/editar/:servicioId',verifyToken,(req, res) => {
+    const serviceId  = req.params.servicioId;
+    res.render("editar",{servicioId: serviceId});
+});
+
 router.get('/currentUser',verifyToken,(req, res) => {
     console.log(req.userId);
     res.json(req.userId);

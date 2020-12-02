@@ -12,6 +12,6 @@ router.get('/', controller.get_all_services);
 
 router.delete('/delete/:serviceId', controller.delete_service);
 
-router.put('/edit/:serviceId',controller.edit_service);
+router.post('/edit/:serviceId',controller.edit_service);
 
 module.exports = router;
