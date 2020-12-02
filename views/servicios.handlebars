@@ -103,27 +103,29 @@
 <script type="text/javascript">
 
     $.ajax({ url: "/api/services", method: "GET" }).then(function (data) {
-
-
-        console.log(data);
         let list = $("#servicesList");
 
 
-        for (i = 0; i < data.length; i++) {
-
+        data.forEach((item) => {
+        
+            var email = "";
             var card = $(`<div class= "col-12 col-md-3">`)
             var cardBody = $(`<div class="big-card mb-3" >`);
             cardBody.append($(`<img src="https://www.capitalmexico.com.mx/wp-content/uploads/2020/10/EbuBlaYyvMhQsICKlxABndZObnndgaXLplbSdGfLTOVodYnmajykIhpktjOAiCSK.jpeg" class="card-img-top" alt="...">`));
-
-
             cardBody.append(
-                $(`<h5 class="card-title">`).text(`${data[i].name}`),
-                $(`<p class="card-text">`).text(`${data[i].description}`),
-                $(`<a href="#" class="btn btn-primary">`).text(`Más información`)
+                $(`<h5 class="card-title">`).text(`${item.name}`),
+                $(`<p class="card-text">`).text(`${item.description}`)
             );
+            var user = $.ajax({ url: `/api/services/serviceOwner/${item._id}`, method: "GET" }).then(function (user) {
+                email = user.email;
+                console.log(email);
+                cardBody.append($(`<h5>`).text(`Contacto: ${email}`));
+
+            });
             card.append(cardBody);
+            console.log(email);
             list.append(card)
-        }
+        });
     });
 
 

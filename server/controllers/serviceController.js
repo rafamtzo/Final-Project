@@ -29,7 +29,22 @@ exports.get_service = async (req, res) => {
     const { serviceId } = req.params;
     const service = await Service.findOne({_id: serviceId});
     res.send(service);
-}; 
+};
+
+exports.get_service_owner = async (req, res) => {
+    try {
+        const { serviceId } = req.params;
+        const service = await Service.findOne({_id: serviceId});
+        console.log(service);
+        const owner = await User.findOne({_id: service.user})
+        console.log(owner);
+        res.send(owner);
+
+    } catch(err){
+        next(err);
+    }
+    
+};
 
 exports.delete_service = async (req, res) => {
     const { serviceId } = req.params;
