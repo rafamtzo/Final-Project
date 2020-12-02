@@ -24,6 +24,12 @@ router.get('/servicios/usuario',verifyToken,(req, res) => {
     res.sendFile(path.resolve('./misServicios.html'));
 });
 
+router.get('/servicios/:servicioId',verifyToken,(req, res) => {
+    const serviceId  = req.params.servicioId;
+    console.log(serviceId);
+    res.sendFile(path.resolve('./infoServicio.html'));
+});
+
 router.get('/nuevo',verifyToken,(req, res) => {
     res.sendFile(path.resolve('./crear.html'));
 });
