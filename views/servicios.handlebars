@@ -39,8 +39,10 @@
         </ol>
     </nav>
 
-    
-    <ul  id= "servicesList" class="list-group"></ul>
+    <div id= "servicesList" class="row">
+
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -48,23 +50,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <div class = "foot">
-<div class="shadow-lg p-0 mb-8">
-  <footer class="page-footer font-small unique-color-dark pt-4">
-  <div class="container">
-    <ul class="list-unstyled list-inline text-center py-2">
-      <li class="list-inline-item">
-        <h5 class="mb-1" style=color:white>Solicita y Trabaja facilmente </h5>
-      </li>
-      <li class="list-inline-item">
-        <a href="#!" class="btn btn-primary" style=color:white>Ingresar Sesión</a>
-      </li>
-    </ul>
-  </div>
-  <div class="footer-copyright text-center py-3" style=color:white>© 2020 Copyright:
-    <a class = "btn btn-link" href="/home" > SuperServicios.com</a>
-  </div>
-  </footer>
+
 </body>
 
 <script type="text/javascript">
@@ -74,20 +60,22 @@
     
       console.log(data);
       let list = $("#servicesList");
+
     
       for(i = 0; i < data.length; i++) {
         
-        var card = $(`<div class="card" style="width: 18rem">`);
-        var listItem = $(`<div class="card-body">`);
-    
-        listItem.append(
+        var card = $(`<div class= "col-12 col-md-3">`)
+        var cardBody = $(`<div class="card mb-3" >`);
+        cardBody.append($(`<img src="https://www.capitalmexico.com.mx/wp-content/uploads/2020/10/EbuBlaYyvMhQsICKlxABndZObnndgaXLplbSdGfLTOVodYnmajykIhpktjOAiCSK.jpeg" class="card-img-top" alt="...">`));
+      
+
+        cardBody.append(
           $(`<h5 class="card-title">`).text(`${data[i].name}`),
           $(`<p class="card-text">`).text(`${data[i].description}`),
           $(`<a href="#" class="btn btn-primary">`).text(`Más información`)
        );
-       card.append($(`<img src="https://www.capitalmexico.com.mx/wp-content/uploads/2020/10/EbuBlaYyvMhQsICKlxABndZObnndgaXLplbSdGfLTOVodYnmajykIhpktjOAiCSK.jpeg" class="card-img-top" alt="...">`));
-       card.append(listItem);
-       list.append(card);
+       card.append(cardBody);
+       list.append(card)
       }
     });
     
