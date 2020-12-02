@@ -22,6 +22,14 @@ exports.get_services_from_user = async (req, res) => {
 exports.get_all_services = async (req, res) => {
     const userServices = await Service.find();
     res.send(userServices);
+};
+
+exports.get_service = async (req, res) => {
+    const { serviceId } = req.params;
+    console.log(`Aui en back: ${serviceId}`);
+    const service = await Service.findOne({_id: serviceId});
+    console.log(service);
+    res.send(service);
 }; 
 
 exports.delete_service = async (req, res) => {

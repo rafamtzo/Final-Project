@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info Servicios</title>
+    <script src=https://code.jquery.com/jquery-3.5.1.min.js></script>
     <link rel="stylesheet" href="/./css/styles.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -29,11 +30,10 @@
     </ul>
 </div>
 
-<h1>Nombre Servicio</h1>
+<h1 id="nombre"></h1>
 
 <div>
-    <h2>
-        Info de servicio
+    <h2 id = "descripcion" >
     </h2>
 </div>
 
@@ -64,3 +64,16 @@
   </div>
   </footer>
 </html>
+
+
+<script type="text/javascript">
+    $.ajax({url: `/./api/services/service/{{servicioId}}`, method: "GET"}).then(function(data){
+      document.getElementById("nombre").innerHTML = data.name;
+      document.getElementById("descripcion").innerHTML = data.description;
+    });
+
+
+    
+
+    document.getElementById("nombre").innerHTML = `hola`;  
+</script>

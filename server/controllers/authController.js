@@ -37,11 +37,11 @@ exports.login = async (req, res) => {
 }
 
 exports.get_login = async (req, res) => {
-    res.sendFile(path.resolve('./ingresa.html'));;
+    res.render("ingresa");
 }
 
 exports.get_register = async (req, res) => {
-    res.sendFile(path.resolve('./registra.html'));;
+    res.render("registra");
 }
  
 exports.logout = async (req, res) => {

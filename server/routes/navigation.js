@@ -5,7 +5,7 @@ const verifyToken = require('../middleware/authMiddleware');
 
 
 router.get('/',(req, res) => {
-    res.sendFile(path.resolve('./index.html'));
+    res.render("index");
 });
 
 router.get('/css/styles.css', (req, res) => { 
@@ -13,25 +13,26 @@ router.get('/css/styles.css', (req, res) => {
 });
 
 router.get('/home',(req, res) => {
-    res.sendFile(path.resolve('./index.html'));
+    res.render("index");
 });
 
 router.get('/servicios',verifyToken,(req, res) => {
-    res.sendFile(path.resolve('./servicios.html'));
+    const num = 0;
+    res.render("servicios",num);
 });
 
 router.get('/servicios/usuario',verifyToken,(req, res) => {
-    res.sendFile(path.resolve('./misServicios.html'));
+    res.render("misServicios");
 });
 
-router.get('/servicios/:servicioId',verifyToken,(req, res) => {
+router.get('/servicios/info/:servicioId',verifyToken,(req, res) => {
     const serviceId  = req.params.servicioId;
     console.log(serviceId);
-    res.sendFile(path.resolve('./infoServicio.html'));
+    res.render("infoServicio", {servicioId: serviceId});
 });
 
 router.get('/nuevo',verifyToken,(req, res) => {
-    res.sendFile(path.resolve('./crear.html'));
+    res.render("crear");
 });
 
 router.get('/currentUser',verifyToken,(req, res) => {
@@ -41,7 +42,7 @@ router.get('/currentUser',verifyToken,(req, res) => {
 
 
 router.get('/faq',(req, res) => {
-    res.sendFile(path.resolve('./faq.html'));
+    res.render("faq");
 });
 
 module.exports = router;
