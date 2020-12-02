@@ -1,71 +1,103 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Pagina Home</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+<head>
+  <title>Pagina Home</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-   <div class="shadow-lg p-0 mb-8">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<nav class="shadow-lg pt-0 pb-0 mb-8 navbar navbar-expand-lg navbar-dark ">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" id="logo" href="/home">Servicios</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="nav">
       <li class="nav-item">
-          <a class="nav-link active" href="/home"> <h3 style=color:grey> Home </h3></a>
+        <a class="nav-link active" href="/home">
+          <h3 style=color:grey> Home </h3>
+        </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="/servicios"> <h3> Servicios</h3></a>
+        <a class="nav-link" href="/servicios">
+          <h3> Servicios</h3>
+        </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="/nuevo"> <h3>Crear</h3></a>
+          <a class="nav-link" href="/servicios/usuario">
+            <h3> Mis Servicios</h3>
+          </a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/nuevo">
+          <h3>Crear</h3>
+        </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="/login"><h3>Ingresa</h3></a>
+        <a class="nav-link" href="/login">
+          <h3>Ingresa</h3>
+        </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="/faq"><h3>Quienes Somos?</h3></a>
-      </li>
-  </ul>
-  </div>
-
-    <div class="jumbotron">
-        <h1 class="display-4">Bienvenido a Servicios</h1>
-        <p class="lead">Somos una pagina que apoya a los diferentes trabajadores de Monterrey donde buscamos ofrecer a cualquier persona la oportunidad de dar a conocer sus servicios
-            en una pagina accesible para todos y con la posibilidad de conseguir mas clientes de una manera rapida y sencilla.</p>
-        <hr class="my-4">
-        <p>Si eres nuevo en la pagina y quieres crear un nuevo servicio presiona el boton de abajo</p>
-        <p class="lead">
-          <a class="btn btn-dark btn-lg" href="#" role="button">Crear Servicio</a>
-        </p>
-        <img src="https://www.marketingdirecto.com/wp-content/uploads/2015/01/servicio_al_cliente.png" alt="Servicios">
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-
-<div class = "foot">
-<div class="shadow-lg p-0 mb-8">
-  <footer class="page-footer font-small unique-color-dark pt-4">
-  <div class="container">
-    <ul class="list-unstyled list-inline text-center py-2">
-      <li class="list-inline-item">
-        <h5 class="mb-1" style=color:white>Solicita y Trabaja facilmente </h5>
-      </li>
-      <li class="list-inline-item">
-        <a href="#!" class="btn btn-primary" style=color:white>Ingresar Sesión</a>
+        <a class="nav-link" href="/faq">
+          <h3>Quienes Somos?</h3>
+        </a>
       </li>
     </ul>
   </div>
-  <div class="footer-copyright text-center py-3" style=color:white>© 2020 Copyright:
-    <a class = "btn btn-link" href="/home" > SuperServicios.com</a>
-  </div>
-  </footer>
-</html>
+</nav>
 
+<div class="jumbotron">
+  <h1 class="display-4">Bienvenido a Servicios</h1>
+  <p class="lead">Somos una pagina que apoya a los diferentes trabajadores de Monterrey donde buscamos ofrecer a
+    cualquier persona la oportunidad de dar a conocer sus servicios
+    en una pagina accesible para todos y con la posibilidad de conseguir mas clientes de una manera rapida y sencilla.
+  </p>
+  <hr class="my-4">
+  <p>Si eres nuevo en la pagina y quieres crear un nuevo servicio presiona el boton de abajo</p>
+  <p class="lead">
+    <a class="btn btn-dark btn-lg" href="#" role="button">Crear Servicio</a>
+  </p>
+  <div class="home-img-holder">
+    <img class="home-img" src="https://www.marketingdirecto.com/wp-content/uploads/2015/01/servicio_al_cliente.png" alt="Servicios">
+
+  </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+<div class="foot">
+  <div class="shadow-lg p-0 mb-8">
+    <footer class="page-footer font-small unique-color-dark pt-4">
+      <div class="container">
+        <ul class="list-unstyled list-inline text-center py-2">
+          <li class="list-inline-item">
+            <h5 class="mb-1" style=color:white>Solicita y Trabaja facilmente </h5>
+          </li>
+          <li class="list-inline-item">
+            <a href="#!" class="btn btn-primary" style=color:white>Ingresar Sesión</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-copyright text-center py-3" style=color:white>© 2020 Copyright:
+        <a class="btn btn-link" href="/home"> SuperServicios.com</a>
+      </div>
+    </footer>
+
+</html>

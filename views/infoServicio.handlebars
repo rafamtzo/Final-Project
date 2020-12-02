@@ -7,33 +7,56 @@
     <title>Info Servicios</title>
     <script src=https://code.jquery.com/jquery-3.5.1.min.js></script>
     <link rel="stylesheet" href="../../../css/styles.css" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<div class="shadow-lg p-0 mb-8">
-    <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link active" href="/home"> <h3 > Home </h3></a>
+<nav class="shadow-lg pt-0 pb-0 mb-8 navbar navbar-expand-lg navbar-dark ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" id="logo" href="/home">Servicios</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/home">
+                    <h3> Home </h3>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/servicios">
+                    <h3 style=color:grey> Servicios</h3>
+                </a>
+            </li>
+            <li class="nav-item">
+          <a class="nav-link" href="/servicios/usuario">
+            <h3> Mis Servicios</h3>
+          </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/servicios"> <h3 style=color:grey> Servicios</h3></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/nuevo"> <h3>Crear</h3></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/login"><h3>Ingresa</h3></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/faq"><h3>Quienes Somos?</h3></a>
-        </li>
-    </ul>
-</div>
+            <li class="nav-item">
+                <a class="nav-link" href="/nuevo">
+                    <h3>Crear</h3>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">
+                    <h3>Ingresa</h3>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/faq">
+                    <h3>Quienes Somos?</h3>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <h1 id="nombre"></h1>
 
 <div>
-    <h2 id = "descripcion" >
+    <h2 id="descripcion">
     </h2>
 </div>
 
@@ -41,44 +64,45 @@
 
 </body>
 <div>
-    <a href="/servicios/usuario"id="delete_button" type="button" class="btn btn-danger">Borrar</a>
-    <a href="/editar/{{servicioId}}"id= "edit_button"type="button" class="btn btn-primary">Actualizar</a>
+    <a href="/servicios/usuario" id="delete_button" type="button" class="btn btn-danger">Borrar</a>
+    <a href="/editar/{{servicioId}}" id="edit_button" type="button" class="btn btn-primary">Actualizar</a>
 </div>
 
-<div class = "foot">
-<div class="shadow-lg p-0 mb-8">
-  <footer class="page-footer font-small unique-color-dark pt-4">
-  <div class="container">
-    <ul class="list-unstyled list-inline text-center py-2">
-      <li class="list-inline-item">
-        <h5 class="mb-1" style=color:white>Solicita y Trabaja facilmente </h5>
-      </li>
-      <li class="list-inline-item">
-        <a href="#!" class="btn btn-primary" style=color:white>Ingresar Sesión</a>
-      </li>
-    </ul>
-  </div>
-  <div class="footer-copyright text-center py-3" style=color:white>© 2020 Copyright:
-    <a class = "btn btn-link" href="/home" > SuperServicios.com</a>
-  </div>
-  </footer>
+<div class="foot">
+    <div class="shadow-lg p-0 mb-8">
+        <footer class="page-footer font-small unique-color-dark pt-4">
+            <div class="container">
+                <ul class="list-unstyled list-inline text-center py-2">
+                    <li class="list-inline-item">
+                        <h5 class="mb-1" style=color:white>Solicita y Trabaja facilmente </h5>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!" class="btn btn-primary" style=color:white>Ingresar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-copyright text-center py-3" style=color:white>© 2020 Copyright:
+                <a class="btn btn-link" href="/home"> SuperServicios.com</a>
+            </div>
+        </footer>
+
 </html>
 
 
 <script type="text/javascript">
-    $.ajax({url: `/./api/services/service/{{servicioId}}`, method: "GET"}).then(function(data){
-      document.getElementById("nombre").innerHTML = data.name;
-      document.getElementById("descripcion").innerHTML = data.description;
+    $.ajax({ url: `/./api/services/service/{{servicioId}}`, method: "GET" }).then(function (data) {
+        document.getElementById("nombre").innerHTML = data.name;
+        document.getElementById("descripcion").innerHTML = data.description;
     });
 
-    $("#edit_button").click(function() {
+    $("#edit_button").click(function () {
         console.log("hola desde edit");
     });
 
-    $("#delete_button").click(function() {
+    $("#delete_button").click(function () {
         console.log("hola desde delete");
-        $.ajax({url: `/./api/services/delete/{{servicioId}}`, method: "DELETE"}).then(function(data){
-            if(data){
+        $.ajax({ url: `/./api/services/delete/{{servicioId}}`, method: "DELETE" }).then(function (data) {
+            if (data) {
                 alert("Servicio Borrado.");
             } else {
                 alert("No se pudo Borrar el servicio.");
