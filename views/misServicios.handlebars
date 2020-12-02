@@ -62,7 +62,7 @@
   </nav>
 
 
-  <ul id="servicesList" class="list-group"></ul>
+  <div id="servicesList" class="row"></div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -104,17 +104,19 @@
 
       for (i = 0; i < data.length; i++) {
 
-        var card = $(`<div class="big-card" style="width: 18rem">`);
-        var listItem = $(`<div class="card-body">`);
+        var card = $(`<div class= "col-12 col-md-3">`)
+        var cardBody = $(`<div class="big-card mb-3" >`);
+        cardBody.append($(`<img src="https://www.capitalmexico.com.mx/wp-content/uploads/2020/10/EbuBlaYyvMhQsICKlxABndZObnndgaXLplbSdGfLTOVodYnmajykIhpktjOAiCSK.jpeg" class="card-img-top" alt="...">`));
+  
         var button = $(`<a href= "/servicios/info/${data[i]._id}" class="btn btn-primary">`).text(`Más información`);
 
-        listItem.append(
+        cardBody.append(
           $(`<h5 class="card-title">`).text(`${data[i].name}`),
           $(`<p class="card-text">`).text(`${data[i].description}`),
           button
         );
-        card.append($(`<img src="https://www.capitalmexico.com.mx/wp-content/uploads/2020/10/EbuBlaYyvMhQsICKlxABndZObnndgaXLplbSdGfLTOVodYnmajykIhpktjOAiCSK.jpeg" class="card-img-top" alt="...">`));
-        card.append(listItem);
+        
+        card.append(cardBody);
         list.append(card);
       }
     });
