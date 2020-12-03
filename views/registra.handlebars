@@ -98,10 +98,16 @@
     };
 
     $.post("/register", newUser, function (response) {
-      if (response) {
-        console.log("Register Successful");
-      } else {
+      console.log(response);
+      if (response == false) {
+        resetTextFields();
+        alert("Error al ingresar. Favor de checar tus datos");
         console.log("We couldn't register you");
+      } else {
+        console.log("Register Successful");
+        alert("Usuario registrado.");
+        window.location.href = "/login";
+
       }
     })
 

@@ -7,12 +7,12 @@ require('dotenv').config();
 exports.register = async (req, res) => { 
     const { email, password, passwordConf} = req.body;
     if(password != passwordConf) {
-        return res.status(404).send("The passwords don't match");
+        return res.json(false);
     } 
     let user = new User({ email, password})
     user.password = await user.encryptPassword(user.password);
     await user.save();
-    res.redirect('/');
+    res.json(true);
 };
 
 exports.login = async (req, res) => {
