@@ -129,7 +129,7 @@
 
 
     resetTextFields();
-  })
+  });
 
   function resetTextFields() {
     $("#name").val("");
@@ -138,7 +138,7 @@
 
   let auth = $("#auth");
 
-    var result = $.ajax({ url: `/./currentUser`, method: "GET" });
+  var result = $.ajax({ url: `/./currentUser`, method: "GET" });
 
     $.when( result ).done(function ( ans ) {
         if(ans == false) {
@@ -152,9 +152,6 @@
           auth.append(button);
         }
     });
-
-  });
-
 
 
 </script>
