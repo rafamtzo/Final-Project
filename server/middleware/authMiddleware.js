@@ -18,4 +18,23 @@ function verifyToken(req, res, next) {
     }
 }
 
-module.exports = verifyToken;
+function verifyUserToken(req, res, next) {
+
+    const token = req.cookies.token || '';
+    console.log(`verifiacnado`);
+    if(!token){
+        res.json(false);
+    } else {
+        jwt.verify(token,process.env.JWT_SECRET, function(err,decoded){
+            if(err) {
+                console.log(err);
+                return res.json(false);
+            } else {
+                req.userId = decoded.id;
+                next();
+            }
+        })
+    }
+}
+
+module.exports = {verifyToken, verifyUserToken};

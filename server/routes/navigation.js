@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const verifyToken = require('../middleware/authMiddleware');
+const {verifyToken, verifyUserToken} = require('../middleware/authMiddleware');
 
 
 router.get('/',(req, res) => {
@@ -40,7 +40,8 @@ router.get('/editar/:servicioId',verifyToken,(req, res) => {
     res.render("editar",{servicioId: serviceId});
 });
 
-router.get('/currentUser',verifyToken,(req, res) => {
+router.get('/currentUser',verifyUserToken,(req, res) => {
+    console.log("hola");
     var currentUser = req.userId;
     if(currentUser) {
         res.send(currentUser);
