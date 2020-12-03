@@ -84,9 +84,7 @@
                     <li class="list-inline-item">
                         <h5 class="mb-1" style=color:white>Solicita y Trabaja facilmente </h5>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="#!" class="btn btn-primary" style=color:white>Ingresar Sesión</a>
-                    </li>
+                    <li id="authFooter"class="list-inline-item"/>
                 </ul>
             </div>
             <div class="footer-copyright text-center py-3" style=color:white>© 2020 Copyright:
@@ -123,6 +121,7 @@
     });
 
     let auth = $("#auth");
+    let authFooter = $("#authFooter");
 
     var result = $.ajax({ url: `/./currentUser`, method: "GET" });
 
@@ -131,11 +130,13 @@
           var button = $(`<a class="nav-link" href="/login">`);
           button.append(`<h3>Ingresa</h3>`);
           auth.append(button);
+          authFooter.append(`<a href="/login" class="btn btn-primary" style=color:white>Ingresar Sesión</a>`);
           window.location.href = "/login";
         } else {
           var button = $(`<a class="nav-link" href="/logout">`);
           button.append(`<h3>Logout</h3>`);
           auth.append(button);
+          authFooter.append(`<a href="/logout" class="btn btn-primary" style=color:white>Salir</a>`);
         }
     });
 
