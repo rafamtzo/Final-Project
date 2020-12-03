@@ -28,10 +28,9 @@ exports.login = async (req, res) => {
             const token = jwt.sign({id:user._id}, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRES_IN});
             console.log(token);
             res.cookie("token", token, {httpOnly:true});
-            res.redirect('/');
         } else {
             console.log("Password is invalid");
-            res.json(`invalid`);   
+            res.json(false);   
         }
     }
 }

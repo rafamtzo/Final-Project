@@ -41,8 +41,12 @@ router.get('/editar/:servicioId',verifyToken,(req, res) => {
 });
 
 router.get('/currentUser',verifyToken,(req, res) => {
-    console.log(req.userId);
-    res.json(req.userId);
+    var currentUser = req.userId;
+    if(currentUser) {
+        res.send(currentUser);
+    } else {
+        res.json(false);
+    }
 });
 
 

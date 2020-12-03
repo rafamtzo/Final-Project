@@ -39,11 +39,7 @@
                     <h3>Crear</h3>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login">
-                    <h3>Ingresa</h3>
-                </a>
-            </li>
+            <li id= "auth" class="nav-item">
             <li class="nav-item">
                 <a class="nav-link" href="/faq">
                     <h3>Quienes Somos?</h3>
@@ -108,6 +104,23 @@
                 alert("No se pudo Borrar el servicio.");
             }
         });
+    });
+
+    let auth = $("#auth");
+
+    var result = $.ajax({ url: `/./currentUser`, method: "GET" });
+
+    $.when( result ).done(function ( ans ) {
+        if(ans == false) {
+          var button = $(`<a class="nav-link" href="/login">`);
+          button.append(`<h3>Ingresa</h3>`);
+          auth.append(button);
+          window.location.href = "/login";
+        } else {
+          var button = $(`<a class="nav-link" href="/logout">`);
+          button.append(`<h3>Logout</h3>`);
+          auth.append(button);
+        }
     });
 
 </script>

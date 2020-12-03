@@ -4,13 +4,13 @@ const { set } = require('mongoose');
 const { use } = require('../routes/auth');
 const { ObjectID } = require('bson');
 
-exports.create_service = async (req, res) => {
+exports.create_service = async (req, res,next) => {
      const { userId } = req.params;
      const {price, name, description} = req.body; 
      const user = await User.findOne({_id: userId});
      const service = new Service({price, name, description, user});
      service.save();
-     res.redirect('../../servicios/usuario');
+     res.json(true);
 };
 
 exports.get_services_from_user = async (req, res) => {
@@ -35,9 +35,7 @@ exports.get_service_owner = async (req, res) => {
     try {
         const { serviceId } = req.params;
         const service = await Service.findOne({_id: serviceId});
-        console.log(service);
         const owner = await User.findOne({_id: service.user})
-        console.log(owner);
         res.send(owner);
 
     } catch(err){

@@ -42,11 +42,7 @@
             <h3 style=color:grey>Crear</h3>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">
-            <h3>Ingresa</h3>
-          </a>
-        </li>
+        <li id= "auth" class="nav-item">
         <li class="nav-item">
           <a class="nav-link" href="/faq">
             <h3>Quienes Somos?</h3>
@@ -113,22 +109,42 @@
     $.ajax({ url: "/currentUser", method: "GET" }).then(function (data) {
       console.log(`Usuario actual: ${data}`);
 
-      $.post(`/api/services/${data}`, newService, function (response) {
-        if (response) {
-          console.log("Post Successful");
+      var post = $.post(`/api/services/${data}`, newService);
+
+      $.when( post ).done(function ( ans ) {
+        if(ans) {
+          alert("Servicio guardado exitosamente");
         } else {
-          console.log("We couldn't post");
+          alert("No se pudo guardar");
         }
-      })
+        window.location.href = "/servicios/usuario";
+        resetTextFields();
+      });
     });
 
-    resetTextFields();
   })
 
   function resetTextFields() {
     $("#exampleInputEmail1").val("");
     $("#exampleFormControlTextarea1").val("")
   }
+
+  let auth = $("#auth");
+
+    var result = $.ajax({ url: `/./currentUser`, method: "GET" });
+
+    $.when( result ).done(function ( ans ) {
+        if(ans == false) {
+          var button = $(`<a class="nav-link" href="/login">`);
+          button.append(`<h3>Ingresa</h3>`);
+          auth.append(button);
+          window.location.href = "/login";
+        } else {
+          var button = $(`<a class="nav-link" href="/logout">`);
+          button.append(`<h3>Logout</h3>`);
+          auth.append(button);
+        }
+    });
 
 
 
