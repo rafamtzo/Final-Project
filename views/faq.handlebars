@@ -42,11 +42,7 @@
             <h3>Crear</h3>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">
-            <h3>Ingresa</h3>
-          </a>
-        </li>
+        <li id= "auth" class="nav-item">
         <li class="nav-item">
           <a class="nav-link" href="/faq">
             <h3 style=color:grey>Quienes Somos?</h3>
@@ -93,9 +89,7 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  <script src=https://code.jquery.com/jquery-3.5.1.min.js></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
@@ -124,3 +118,23 @@
 </div>
 
 </html>
+
+<script type="text/javascript">
+  let auth = $("#auth");
+
+  var result = $.ajax({ url: `/./currentUser`, method: "GET" });
+
+  $.when( result ).done(function ( ans ) {
+    if(ans == false) {
+      var button = $(`<a class="nav-link" href="/login">`);
+      button.append(`<h3>Ingresa</h3>`);
+      auth.append(button);
+      window.location.href = "/login";
+    } else {
+        var button = $(`<a class="nav-link" href="/logout">`);
+        button.append(`<h3>Logout</h3>`);
+        auth.append(button);
+    }
+  });
+
+</script>
