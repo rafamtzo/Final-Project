@@ -117,22 +117,18 @@
     };
     console.log(newService);
 
-    $.post(`/api/services/edit/${servicio._id}`, newService, function (response) {
-      if (response) {
-        console.log("Post Successful");
+    var result = $.post(`/api/services/edit/${servicio._id}`, newService);
+
+    $.when( result ).done(function ( ans ) {
+      if(ans) {
+        alert("Servicio actualizado exitosamente");
+        window.location.href = "/servicios/usuario";
       } else {
-        console.log("We couldn't post");
+        alert("No se pudo actualizar servicio");
       }
     });
-
-
-    resetTextFields();
   });
 
-  function resetTextFields() {
-    $("#name").val("");
-    $("#description").val("")
-  }
 
   let auth = $("#auth");
   let authFooter = $("#authFooter");

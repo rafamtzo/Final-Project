@@ -60,7 +60,7 @@
 
 </body>
 <div>
-    <a href="/servicios/usuario" id="delete_button" type="button" class="btn btn-danger">Borrar</a>
+    <a  id="delete_button" type="button" class="btn btn-danger">Borrar</a>
     <a href="/editar/{{servicioId}}" id="edit_button" type="button" class="btn btn-primary">Actualizar</a>
 </div>
 
@@ -95,12 +95,15 @@
 
     $("#delete_button").click(function () {
         console.log("hola desde delete");
-        $.ajax({ url: `/./api/services/delete/{{servicioId}}`, method: "DELETE" }).then(function (data) {
-            if (data) {
-                alert("Servicio Borrado.");
-            } else {
-                alert("No se pudo Borrar el servicio.");
-            }
+        var result = $.ajax({ url: `/./api/services/delete/{{servicioId}}`,method: "DELETE"});
+
+        $.when( result ).done(function ( ans ) {
+         if(ans) {
+            alert("Servicio borrado exitosamente");
+            window.location.href = "/servicios/usuario";
+         } else {
+            alert("No se pudo borrar servicio");
+         }
         });
     });
 
@@ -120,7 +123,7 @@
           var button = $(`<a class="nav-link" href="/logout">`);
           button.append(`<h3>Logout</h3>`);
           auth.append(button);
-          authFooter.append(`<a href="/logout" class="btn btn-primary" style=color:white>Salir</a>`);
+          
         }
     });
 
