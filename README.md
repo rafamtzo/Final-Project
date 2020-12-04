@@ -4,9 +4,9 @@ Proyecto Final de la materia de Desarrollo Web
 
 # Miembros del Equipo
 
-Jorge Elizondo    A01282508
-Diego Villarreal  A01282555
-Rafael Martínez   A01039710
+- Jorge Elizondo    A01282508
+- Diego Villarreal  A01282555
+- Rafael Martínez   A01039710
 
 # Objetivo de software desarrollado
 
