@@ -28,7 +28,7 @@ Front-end:
 - Ajax
 - handlebars
 
-Backend:
+Back-end:
 - Node.js
 - Express
 - Mongoose
